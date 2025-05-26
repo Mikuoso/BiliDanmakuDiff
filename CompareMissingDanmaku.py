@@ -119,9 +119,9 @@ def compare_and_save_missing_danmaku(file1, file2, output_file):
 
 
 if __name__ == "__main__":
-    file1 = r"7+8.xml" #file1路径
-    file2 =  r"user_f4065ed9.xml" #file2路径
-    output_file = r"1.xml" #output_file文件名
+    file1 = r"file1.xml" #file1路径
+    file2 =  r"file2.xml" #file2路径
+    output_file = r"output_file.xml" #output_file文件名
     try:
         result = compare_and_save_missing_danmaku(file1, file2, output_file)
         print(f"缺失弹幕数: {result}")
