@@ -82,7 +82,7 @@ def compare_danmaku() -> dict:
         return {}
 
     missing = defaultdict(int)
-    tolerance = float(USER_CONFIG["TIME_TOLERANCE"])
+    tolerance = USER_CONFIG["TIME_TOLERANCE"]
 
     for (t_str, content), count in src_counts.items():
         try:
