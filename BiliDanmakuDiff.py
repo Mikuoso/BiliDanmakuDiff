@@ -7,19 +7,19 @@ import sys
 # ————————————————————用户配置区————————————————————
 USER_CONFIG = {
     # 输入文件配置
-    "INPUT_FILES":{
-        "BASE_PATH": r"path\to\the\base_file.xml", # 基准文件路径及名称
-        "COMPARE_PATH": r"path\to\the\compare_file.xml", # 对比文件路径及名称
+    "INPUT_FILES": {
+        "BASE_PATH": r"path\to\the\base_file.xml",  # 基准文件路径及名称
+        "COMPARE_PATH": r"path\to\the\compare_file.xml",  # 对比文件路径及名称
     },
 
     # 输出文件配置
-    "OUTPUT_PATH": r"path\to\the\output_file.xml", # 输出路径及名称
+    "OUTPUT_PATH": r"path\to\the\output_file.xml",  # 输出路径及名称
 
     # 对比配置
-    "TIME_TOLERANCE": 0.000, # 时间容差（单位：秒）
+    "TIME_TOLERANCE": 0.000,  # 时间容差（单位：秒）
 
     # 日志配置
-    "LOG_LEVEL": logging.DEBUG, # 日志等级
+    "LOG_LEVEL": logging.DEBUG,  # 日志等级
 }
 # ————————————————————初始化日志————————————————————
 logging.basicConfig(
@@ -29,6 +29,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)]
 )
 # —————————————————————————————————————————————
+
 
 def parse_xml(xml_path: str) -> ET.ElementTree:
     """解析XML"""
@@ -40,6 +41,7 @@ def parse_xml(xml_path: str) -> ET.ElementTree:
     except FileNotFoundError:
         logging.error(f"文件不存在：{xml_path}")
         raise
+
 
 def build_contrast_index() -> dict:
     """构建用于数据对比的索引结构"""
@@ -63,6 +65,7 @@ def build_contrast_index() -> dict:
     except Exception as e:
         logging.error(f"构建索引失败：{str(e)}")
     return index
+
 
 def compare_danmaku() -> dict:
     """弹幕对比 可带时间容差"""
@@ -101,6 +104,7 @@ def compare_danmaku() -> dict:
 
     return missing
 
+
 def generate_diff_xml(missing: dict) -> int:
     """生成差异XML文件"""
     try:
@@ -131,6 +135,7 @@ def generate_diff_xml(missing: dict) -> int:
     except Exception as e:
         logging.error(f"XML生成失败：{str(e)}")
         return 0
+
 
 if __name__ == "__main__":
     try:
