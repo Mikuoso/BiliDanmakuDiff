@@ -1,6 +1,6 @@
 # BiliDanmakuDiff Bilibili弹幕比对工具
 
-项目本身可独立使用，但设计之初是和[BiliDMProtobufDownloader](https://github.com/Mikuoso/ProtobufCSV2XML)、[ProtobufCSV2XML](https://github.com/Mikuoso/ProtobufCSV2XML)搭配使用。
+项目本身可独立使用，与[BiliDanmakuDownloader](https://github.com/Mikuoso/BiliDanmakuDiff)搭配使用更佳。
 
 ## 功能描述
 本工具基于Python 3.10，用于比较两个B站标准XML格式的弹幕文件，找出基准文件中存在但对比文件中缺失的弹幕，并生成包含这些差异弹幕的新XML文件。
